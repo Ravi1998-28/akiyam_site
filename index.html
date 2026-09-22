@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aikyam Rise Club | Empowering Youth Through Sports & Unity</title>
+  <meta name="description" content="Aikyam Rise Club — empowering youth through sports, unity, rural development and a green planet." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    :root{
+      --red:#d71920;
+      --red-dark:#a90f16;
+      --blue:#071b49;
+      --blue-2:#0b3f8f;
+      --gold:#f4b942;
+      --orange:#ef8d24;
+      --green:#168447;
+      --cream:#fffaf3;
+      --ink:#17233c;
+      --muted:#64748b;
+    }
+
+    *{font-family:"Inter",sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+    .hero-bg{
+      background:
+        radial-gradient(circle at 84% 18%,rgba(244,185,66,.22),transparent 23%),
+        linear-gradient(90deg,rgba(7,27,73,.98) 0%,rgba(9,44,102,.94) 55%,rgba(7,27,73,.76) 100%),
+        url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=85") center/cover
+    }
+
+    .brand-gradient{
+      background:linear-gradient(90deg,#fff 0%,#f4b942 52%,#ef8d24 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent
+    }
+
+    .section-title{color:var(--ink)}
+    .section-label{
+      color:var(--red);
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      font-weight:900
+    }
+
+    .glass{
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(23,35,60,.09);
+      backdrop-filter:blur(12px)
+    }
+
+    .card{
+      transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease
+    }
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 18px 45px rgba(7,27,73,.13);
+      border-color:rgba(215,25,32,.28)
+    }
+
+    .mission-card{
+      position:relative;
+      min-height:350px;
+      overflow:hidden;
+      border-radius:30px;
+      padding:30px;
+      color:#fff;
+      isolation:isolate
+    }
+
+    .mission-card::after{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      right:-65px;
+      top:-65px;
+      background:rgba(255,255,255,.11);
+      z-index:-1
+    }
+
+    .mission-card::before{
+      content:"";
+      position:absolute;
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      left:-50px;
+      bottom:-60px;
+      background:rgba(255,255,255,.07);
+      z-index:-1
+    }
+
+    .mission-red{background:linear-gradient(145deg,#ef3f43 0%,#b5171d 100%)}
+    .mission-blue{background:linear-gradient(145deg,#2863d8 0%,#173777 100%)}
+    .mission-green{background:linear-gradient(145deg,#1fa552 0%,#0f6337 100%)}
+    .mission-orange{background:linear-gradient(145deg,#f39a18 0%,#bb5e09 100%)}
+
+    .mission-icon{
+      width:62px;height:62px;border-radius:20px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.24);
+      font-size:30px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.18)
+    }
+
+    .mission-number{
+      font-size:.75rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      opacity:.78
+    }
+
+    .stat{
+      border-left:4px solid var(--gold)
+    }
+
+    .mobile-menu{
+      transition:max-height .3s ease,opacity .3s ease;
+      max-height:0;opacity:0;overflow:hidden
+    }
+    .mobile-menu.open{max-height:500px;opacity:1}
+
+    .logo-shadow{filter:drop-shadow(0 7px 20px rgba(0,0,0,.18))}
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#071b49]/96 backdrop-blur-xl border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="h-20 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center overflow-hidden logo-shadow">
+            <img src="./images/aikyam-logo.png" alt="Aikyam Rise Club Logo" class="w-12 h-12 object-contain">
+          </div>
+          <div>
+            <div class="font-black text-lg leading-none text-white tracking-tight">AIKYAM</div>
+            <div class="text-[10px] text-[#f4b942] font-extrabold tracking-[.18em] mt-1">RISE CLUB</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-white/95">
+          <a href="#home" class="hover:text-[#f4b942] transition">Home</a>
+          <a href="#about" class="hover:text-[#f4b942] transition">About</a>
+          <a href="#mission" class="hover:text-[#f4b942] transition">Mission</a>
+          <a href="#achievements" class="hover:text-[#f4b942] transition">Achievements</a>
+          <a href="#vision" class="hover:text-[#f4b942] transition">Future Vision</a>
+          <a href="#committee" class="hover:text-[#f4b942] transition">Committee</a>
+          <a href="#contact" class="hover:text-[#f4b942] transition">Contact</a>
+        </div>
+
+        <button id="menu-btn" aria-label="Open menu" class="md:hidden w-11 h-11 rounded-xl border border-white/20 bg-white/10 flex flex-col items-center justify-center gap-1.5">
+          <span class="w-6 h-0.5 bg-white rounded"></span>
+          <span class="w-6 h-0.5 bg-white rounded"></span>
+          <span class="w-6 h-0.5 bg-white rounded"></span>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu md:hidden border-t border-white/10 bg-[#071b49]">
+        <div class="py-5 flex flex-col gap-5 text-sm font-semibold">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#mission">Mission</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#vision">Future Vision</a>
+          <a href="#committee">Committee</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="max-w-7xl mx-auto w-full px-5 sm:px-6 py-24">
+      <div class="max-w-3xl" data-aos="fade-up">
+        <p class="section-label mb-5">Aikyam • Unity • Upliftment</p>
+        <div class="hero-color-rule w-24 h-1.5 rounded-full bg-gradient-to-r from-[#d10f16] via-[#f0a040] to-[#004090] mb-7"></div>
+        <h1 class="text-5xl sm:text-6xl lg:text-8xl font-black leading-[.95]">
+          Utho.<br>
+          Jago.<br>
+          <span class="brand-gradient">Chalo.</span>
+        </h1>
+        <p class="mt-7 text-lg sm:text-xl text-blue-50 max-w-2xl leading-relaxed">
+          Empowering youth through sports & unity — building talent, discipline,
+          healthier communities and a greener future.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="#about" class="px-7 py-3.5 rounded-full bg-[#f4b942] text-[#071b49] font-bold hover:bg-[#ffd36a] transition shadow-lg shadow-black/10">Discover Aikyam</a>
+          <a href="#contact" class="px-7 py-3.5 rounded-full border border-white/45 font-bold hover:bg-white/10 transition">Join Our Mission</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="border-y border-white/10 bg-[#071b49] text-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="stat pl-4" data-aos="fade-up"><div class="text-3xl font-black">270+</div><div class="text-slate-400 text-sm mt-1">Members</div></div>
+      <div class="stat pl-4" data-aos="fade-up" data-aos-delay="80"><div class="text-3xl font-black">55+</div><div class="text-slate-400 text-sm mt-1">Villages & Cities</div></div>
+      <div class="stat pl-4" data-aos="fade-up" data-aos-delay="160"><div class="text-3xl font-black">22</div><div class="text-slate-400 text-sm mt-1">Acres of Existing Land</div></div>
+      <div class="stat pl-4" data-aos="fade-up" data-aos-delay="240"><div class="text-3xl font-black">U-18</div><div class="text-slate-400 text-sm mt-1">Free Sports Membership</div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 sm:py-32 bg-[#fffaf2]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div data-aos="fade-right">
+          <p class="section-label">About the Club</p>
+          <h2 class="text-4xl sm:text-5xl font-black mt-3">Unity that helps young people <span class="text-amber-400">rise.</span></h2>
+          <p class="mt-7 text-slate-300 leading-8">
+            “Aikyam” is derived from Sanskrit, meaning oneness or unity. The club embodies
+            togetherness through sports, culture and community.
+          </p>
+          <p class="mt-5 text-slate-300 leading-8">
+            “Rise” represents upliftment — a call to move beyond stagnation and mediocrity,
+            helping young people become aware of their potential and purpose.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="glass px-4 py-2 rounded-full text-sm">Sports</span>
+            <span class="glass px-4 py-2 rounded-full text-sm">Youth Development</span>
+            <span class="glass px-4 py-2 rounded-full text-sm">Rural Development</span>
+            <span class="glass px-4 py-2 rounded-full text-sm">Environment</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+          <img class="rounded-3xl h-64 w-full object-cover" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=85" alt="Young athletes">
+          <img class="rounded-3xl h-64 w-full object-cover mt-10" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85" alt="Football">
+          <img class="rounded-3xl h-64 w-full object-cover -mt-10" src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=85" alt="Cricket stadium">
+          <img class="rounded-3xl h-64 w-full object-cover" src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=900&q=85" alt="Outdoor community">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission" class="py-24 sm:py-32 bg-white relative overflow-hidden">
+    <div class="absolute -top-28 -right-28 w-80 h-80 rounded-full bg-red-100 blur-3xl opacity-60"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-blue-100 blur-3xl opacity-60"></div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 relative">
+      <div class="max-w-3xl mb-14" data-aos="fade-up">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-1 rounded-full bg-[#d71920]"></span>
+          <p class="section-label mb-0">Vision & Mission</p>
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mt-5 tracking-tight">
+          Four goals. <span class="text-[#0b3f8f]">One purpose.</span>
+        </h2>
+
+        <p class="mt-5 text-slate-600 text-lg leading-8 max-w-2xl">
+          Creating opportunities where sport, character, community and the environment
+          grow together — inspired by the spirit of Aikyam.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <article class="mission-card mission-red card" data-aos="fade-up">
+          <div class="flex items-start justify-between">
+            <div class="mission-icon">🏅</div>
+            <div class="mission-number">01</div>
+          </div>
+          <div class="mt-16">
+            <h3 class="text-3xl font-black leading-tight">Create Medal<br class="hidden xl:block"> Winners</h3>
+            <p class="mt-5 text-white/85 leading-7 text-base">
+              Nurture sporting talent and create pathways for young athletes.
+            </p>
+          </div>
+        </article>
+
+        <article class="mission-card mission-blue card" data-aos="fade-up" data-aos-delay="80">
+          <div class="flex items-start justify-between">
+            <div class="mission-icon">🤝</div>
+            <div class="mission-number">02</div>
+          </div>
+          <div class="mt-16">
+            <h3 class="text-3xl font-black leading-tight">Drug-Free<br class="hidden xl:block"> Youth</h3>
+            <p class="mt-5 text-white/85 leading-7 text-base">
+              Promote healthy choices, discipline and positive community engagement.
+            </p>
+          </div>
+        </article>
+
+        <article class="mission-card mission-green card" data-aos="fade-up" data-aos-delay="160">
+          <div class="flex items-start justify-between">
+            <div class="mission-icon">🌱</div>
+            <div class="mission-number">03</div>
+          </div>
+          <div class="mt-16">
+            <h3 class="text-3xl font-black leading-tight">A Green<br class="hidden xl:block"> Planet</h3>
+            <p class="mt-5 text-white/85 leading-7 text-base">
+              Encourage cleaner, healthier and environmentally responsible spaces.
+            </p>
+          </div>
+        </article>
+
+        <article class="mission-card mission-orange card" data-aos="fade-up" data-aos-delay="240">
+          <div class="flex items-start justify-between">
+            <div class="mission-icon">🏘️</div>
+            <div class="mission-number">04</div>
+          </div>
+          <div class="mt-16">
+            <h3 class="text-3xl font-black leading-tight">Rural<br class="hidden xl:block"> Development</h3>
+            <p class="mt-5 text-white/85 leading-7 text-base">
+              Create community infrastructure and opportunities beyond major cities.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="py-24 sm:py-32 bg-[#fffaf2]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+        <p class="section-label">Our Work</p>
+        <h2 class="text-4xl sm:text-5xl font-black mt-3">From ideas to community impact.</h2>
+        <p class="mt-5 text-slate-400 leading-7">The club's documented initiatives include sports, youth engagement and development of community spaces.</p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+        <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up">
+          <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1000&q=85" alt="Half marathon">
+          <div class="p-7"><p class="text-amber-400 font-bold text-sm">SPORTS</p><h3 class="text-2xl font-black mt-2">District-Level Half Marathon</h3><p class="mt-3 text-slate-400 leading-7">Organising a district-level half-marathon as part of the club's sporting activities.</p></div>
+        </article>
+        <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=85" alt="Cricket ground">
+          <div class="p-7"><p class="text-amber-400 font-bold text-sm">INFRASTRUCTURE</p><h3 class="text-2xl font-black mt-2">Day-Night Cricket Ground</h3><p class="mt-3 text-slate-400 leading-7">The club highlights Haryana's first day-night cricket ground on Panchayati land.</p></div>
+        </article>
+        <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1000&q=85" alt="Healthy youth">
+          <div class="p-7"><p class="text-amber-400 font-bold text-sm">YOUTH</p><h3 class="text-2xl font-black mt-2">Free U-18 Sports Membership</h3><p class="mt-3 text-slate-400 leading-7">A free sports membership initiative for players under 18.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE VISION -->
+  <section id="vision" class="py-24 sm:py-32 bg-[#eef5ff]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div data-aos="fade-right">
+          <p class="section-label">Future Vision</p>
+          <h2 class="text-4xl sm:text-5xl font-black mt-3">A place where the community can <span class="text-amber-400">play, learn & grow.</span></h2>
+          <p class="mt-6 text-slate-400 leading-8">
+            The proposed campus vision in the club material covers approximately 16 acres
+            and brings sports, recreation, nature and community facilities together.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-3">
+            <div class="glass rounded-xl p-4">⚽ Football & Hockey</div>
+            <div class="glass rounded-xl p-4">🏃 Running Track</div>
+            <div class="glass rounded-xl p-4">🏏 Cricket Ground</div>
+            <div class="glass rounded-xl p-4">🏸 Indoor Sports</div>
+            <div class="glass rounded-xl p-4">🏊 Swimming Pool</div>
+            <div class="glass rounded-xl p-4">🌳 Jungle Safari</div>
+            <div class="glass rounded-xl p-4">🏋️ Open Gym</div>
+            <div class="glass rounded-xl p-4">🏡 Stay & Hostel</div>
+            <div class="glass rounded-xl p-4">🌿 Pond & Walking Track</div>
+            <div class="glass rounded-xl p-4">🅿️ Parking</div>
+          </div>
+        </div>
+
+        <div class="relative" data-aos="fade-left">
+          <img class="rounded-[2rem] w-full h-[620px] object-cover" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85" alt="Sports campus">
+          <div class="absolute bottom-5 left-5 right-5 glass rounded-2xl p-5">
+            <div class="text-amber-400 font-black text-3xl">16 Acres</div>
+            <div class="text-sm text-slate-300 mt-1">Proposed development vision</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMITTEE -->
+  <!-- Temporary stock portraits are used. Replace only the image URLs in this section with real committee photos later. -->
+  <!-- Temporary stock portraits are used below. Replace only the img src URLs when real committee photos are ready. -->
+  <section id="committee" class="py-24 sm:py-32 bg-white text-slate-950">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="text-center" data-aos="fade-up">
+        <p class="section-label text-blue-700">Club Committee</p>
+        <h2 class="text-4xl sm:text-5xl font-black mt-3">United by purpose.</h2>
+        <p class="mt-5 text-slate-500">A team brought together to nurture talent, discipline and collective growth.</p>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ratanpal Chauhan" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Ratanpal Chauhan</h3><p class="text-blue-700 font-semibold mt-1">Village Sarpanch</p><p class="text-slate-500 text-sm mt-2">B.Tech (Professional)</p></div>
+        </div>
+
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="60">
+          <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Chhatrapal Chauhan" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Chhatrapal Chauhan</h3><p class="text-blue-700 font-semibold mt-1">President</p><p class="text-slate-500 text-sm mt-2">B.Tech / MBA (Professional)</p></div>
+        </div>
+
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="120">
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Pradeep Singh" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Pradeep Singh</h3><p class="text-blue-700 font-semibold mt-1">Vice-President</p><p class="text-slate-500 text-sm mt-2">B.Tech (Professional)</p></div>
+        </div>
+
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="180">
+          <img src="https://randomuser.me/api/portraits/men/61.jpg" alt="Amarpal Singh" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Amarpal Singh</h3><p class="text-blue-700 font-semibold mt-1">Secretary</p><p class="text-slate-500 text-sm mt-2">M.A. (Revenue Ministry, Delhi)</p></div>
+        </div>
+
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jitender Chauhan" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Jitender Chauhan</h3><p class="text-blue-700 font-semibold mt-1">Treasurer</p><p class="text-slate-500 text-sm mt-2">B.A. (Ministry of Culture, GOI)</p></div>
+        </div>
+
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="60">
+          <img src="https://randomuser.me/api/portraits/men/81.jpg" alt="Paramjeet Singh" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Paramjeet Singh</h3><p class="text-blue-700 font-semibold mt-1">Joint-Treasurer</p><p class="text-slate-500 text-sm mt-2">B.A. (Professional)</p></div>
+        </div>
+
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="120">
+          <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Ravi Chauhan" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Ravi Chauhan</h3><p class="text-blue-700 font-semibold mt-1">Joint-Secretary</p><p class="text-slate-500 text-sm mt-2">B.Tech (IT Professional)</p></div>
+        </div>
+
+        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="180">
+          <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Kamalkant Singh" class="w-full h-56 object-cover object-top">
+          <div class="p-6"><h3 class="font-black text-xl">Kamalkant Singh</h3><p class="text-blue-700 font-semibold mt-1">Coordinator</p><p class="text-slate-500 text-sm mt-2">B.Tech / M.Tech (Professional)</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section id="contact" class="py-24 sm:py-32 bg-gradient-to-br from-[#d10f16] via-[#a60c12] to-[#004090]">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center" data-aos="zoom-in">
+      <img src="./images/aikyam-logo.png" alt="Aikyam Rise Club Logo" class="contact-logo mx-auto w-28 h-28 object-contain bg-white rounded-2xl p-2 mb-7 shadow-xl">
+      <p class="text-amber-300 font-black tracking-[.2em] uppercase text-sm">Be Part of the Journey</p>
+      <h2 class="text-4xl sm:text-6xl font-black mt-4">Together, we rise.</h2>
+      <p class="mt-6 text-white/85 max-w-2xl mx-auto text-lg leading-8">
+        Join the mission to empower youth through sports, unity and community development.
+      </p>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="tel:+919466414614" class="px-7 py-3.5 rounded-full bg-white text-slate-950 font-bold hover:bg-slate-100 transition">📞 9466-414-614</a>
+        <a href="https://www.aikyamrise.com" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-full border border-white/40 font-bold hover:bg-white/10 transition">🌐 aikyamrise.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#00285d] border-t border-blue-900/20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-400">
+      <p>© <span id="year"></span> Aikyam Rise Club. All rights reserved.</p>
+      <p class="text-amber-400 font-semibold">Empowering Youth Through Sports & Unity</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, offset: 80 });
+
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+    });
+
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
