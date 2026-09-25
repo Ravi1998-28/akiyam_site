@@ -26,9 +26,20 @@
       --muted:#64748b;
     }
 
-    *{font-family:"Inter",sans-serif}
-    html{scroll-behavior:smooth}
-    body{background:var(--cream);color:var(--ink);overflow-x:hidden}
+    *{font-family:"Inter",sans-serif;box-sizing:border-box}
+    html{scroll-behavior:smooth;width:100%;max-width:100%;overflow-x:hidden}
+    body{
+      background:var(--cream);
+      color:var(--ink);
+      width:100%;
+      max-width:100%;
+      min-width:0;
+      overflow-x:hidden;
+      margin:0
+    }
+
+    img{max-width:100%;height:auto;display:block}
+    section{width:100%;max-width:100%;min-width:0}
 
     .hero-bg{
       background:
@@ -53,14 +64,16 @@
     }
 
     .glass{
-      background:rgba(255,255,255,.88);
+      background:rgba(255,255,255,.92);
       border:1px solid rgba(23,35,60,.09);
       backdrop-filter:blur(12px)
     }
 
     .card{
-      transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease
+      transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+      min-width:0
     }
+
     .card:hover{
       transform:translateY(-7px);
       box-shadow:0 18px 45px rgba(7,27,73,.13);
@@ -80,11 +93,8 @@
     .mission-card::after{
       content:"";
       position:absolute;
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      right:-65px;
-      top:-65px;
+      width:180px;height:180px;border-radius:50%;
+      right:-65px;top:-65px;
       background:rgba(255,255,255,.11);
       z-index:-1
     }
@@ -92,11 +102,8 @@
     .mission-card::before{
       content:"";
       position:absolute;
-      width:140px;
-      height:140px;
-      border-radius:50%;
-      left:-50px;
-      bottom:-60px;
+      width:140px;height:140px;border-radius:50%;
+      left:-50px;bottom:-60px;
       background:rgba(255,255,255,.07);
       z-index:-1
     }
@@ -122,23 +129,68 @@
       opacity:.78
     }
 
-    .stat{
-      border-left:4px solid var(--gold)
+    .stat{border-left:4px solid var(--gold)}
+
+    /* Critical mobile menu fix: solid background + white high-contrast links */
+    .mobile-menu{
+      width:100%;
+      transition:max-height .3s ease,opacity .3s ease;
+      max-height:0;
+      opacity:0;
+      overflow:hidden;
+      background:#071b49
     }
 
-    .mobile-menu{
-      transition:max-height .3s ease,opacity .3s ease;
-      max-height:0;opacity:0;overflow:hidden
+    .mobile-menu.open{max-height:560px;opacity:1}
+
+    .mobile-menu a{
+      color:#fff !important;
+      display:block;
+      padding:4px 0;
+      font-weight:700
     }
-    .mobile-menu.open{max-height:500px;opacity:1}
+
+    .mobile-menu a:hover,
+    .mobile-menu a:focus{
+      color:#f4b942 !important
+    }
 
     .logo-shadow{filter:drop-shadow(0 7px 20px rgba(0,0,0,.18))}
+
+    .photo-card img{transition:transform .45s ease}
+    .photo-card:hover img{transform:scale(1.04)}
+
+    .photo-card{overflow:hidden;border-radius:24px}
+
+    @media (max-width:767px){
+      .section-title{font-size:2.15rem;line-height:1.12}
+      .hero-bg{
+        background-position:62% center
+      }
+      #home .max-w-7xl{
+        width:100%;
+        max-width:100%;
+      }
+      #home h1{
+        font-size:clamp(3rem,16vw,4.5rem);
+      }
+      #home p{
+        max-width:100%;
+      }
+      .mission-card{min-height:300px}
+      .mission-card h3{font-size:1.85rem}
+      .mobile-menu .px-6{padding-left:1.25rem;padding-right:1.25rem}
+    }
+
+    @media (min-width:768px){
+      .mobile-menu{display:none !important}
+    }
   </style>
 </head>
 
 <body>
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#071b49]/96 backdrop-blur-xl border-b border-white/10">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#071b49]/98 backdrop-blur-xl border-b border-white/10">
     <nav class="max-w-7xl mx-auto px-5 sm:px-6">
       <div class="h-20 flex items-center justify-between">
         <a href="#home" class="flex items-center gap-3 group">
@@ -159,24 +211,33 @@
           <a href="#vision" class="hover:text-[#f4b942] transition">Future Vision</a>
           <a href="#committee" class="hover:text-[#f4b942] transition">Committee</a>
           <a href="#contact" class="hover:text-[#f4b942] transition">Contact</a>
+          <a href="https://member.aikyamriseclub.com" target="_blank" rel="noopener noreferrer"
+             class="ml-1 px-4 py-2 rounded-full bg-[#d71920] text-white font-bold hover:bg-[#a90f16] transition">
+            Member Login
+          </a>
         </div>
 
-        <button id="menu-btn" aria-label="Open menu" class="md:hidden w-11 h-11 rounded-xl border border-white/20 bg-white/10 flex flex-col items-center justify-center gap-1.5">
-          <span class="w-6 h-0.5 bg-white rounded"></span>
-          <span class="w-6 h-0.5 bg-white rounded"></span>
-          <span class="w-6 h-0.5 bg-white rounded"></span>
+        <button id="menu-btn" aria-label="Open menu" class="md:hidden w-12 h-12 rounded-xl border-2 border-white/50 bg-white/10 flex flex-col items-center justify-center gap-1.5 shadow-lg">
+          <span class="w-7 h-1 bg-white rounded-full"></span>
+          <span class="w-7 h-1 bg-white rounded-full"></span>
+          <span class="w-7 h-1 bg-white rounded-full"></span>
         </button>
       </div>
 
       <div id="mobile-menu" class="mobile-menu md:hidden border-t border-white/10 bg-[#071b49]">
-        <div class="py-5 flex flex-col gap-5 text-sm font-semibold">
+        <div class="px-5 py-5 flex flex-col gap-5 text-sm font-semibold">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#mission">Mission</a>
           <a href="#achievements">Achievements</a>
+          <a href="#club-gallery">Club Gallery</a>
           <a href="#vision">Future Vision</a>
           <a href="#committee">Committee</a>
           <a href="#contact">Contact</a>
+          <a href="https://member.aikyamriseclub.com" target="_blank" rel="noopener noreferrer"
+             class="!text-white bg-[#d71920] rounded-xl px-4 py-3 text-center hover:!text-white">
+            Member Login
+          </a>
         </div>
       </div>
     </nav>
@@ -200,6 +261,10 @@
         <div class="mt-9 flex flex-wrap gap-4">
           <a href="#about" class="px-7 py-3.5 rounded-full bg-[#f4b942] text-[#071b49] font-bold hover:bg-[#ffd36a] transition shadow-lg shadow-black/10">Discover Aikyam</a>
           <a href="#contact" class="px-7 py-3.5 rounded-full border border-white/45 font-bold hover:bg-white/10 transition">Join Our Mission</a>
+        <a id="hero-member-login" href="https://member.aikyamriseclub.com" target="_blank" rel="noopener noreferrer"
+           class="px-7 py-3.5 rounded-full border-2 border-white/60 text-white font-bold hover:bg-white/10 transition">
+          Member Login
+        </a>
         </div>
       </div>
     </div>
@@ -390,57 +455,113 @@
     </div>
   </section>
 
-  <!-- COMMITTEE -->
-  <!-- Temporary stock portraits are used. Replace only the image URLs in this section with real committee photos later. -->
-  <!-- Temporary stock portraits are used below. Replace only the img src URLs when real committee photos are ready. -->
-  <section id="committee" class="py-24 sm:py-32 bg-white text-slate-950">
+  <!-- CLUB GALLERY -->
+  <section id="club-gallery" class="py-24 sm:py-32 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
-      <div class="text-center" data-aos="fade-up">
-        <p class="section-label text-blue-700">Club Committee</p>
-        <h2 class="text-4xl sm:text-5xl font-black mt-3">United by purpose.</h2>
-        <p class="mt-5 text-slate-500">A team brought together to nurture talent, discipline and collective growth.</p>
+      <div class="max-w-3xl mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-1 rounded-full bg-[#d71920]"></span>
+          <p class="section-label mb-0">Life at Aikyam</p>
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-black mt-4">
+          Real places. <span class="text-[#0b3f8f]">Real people.</span> Real impact.
+        </h2>
+        <p class="mt-5 text-slate-600 text-lg leading-8">
+          A glimpse of the club's sporting spaces, community work and activities.
+        </p>
       </div>
 
-      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ratanpal Chauhan" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Ratanpal Chauhan</h3><p class="text-blue-700 font-semibold mt-1">Village Sarpanch</p><p class="text-slate-500 text-sm mt-2">B.Tech (Professional)</p></div>
-        </div>
+      <div class="grid md:grid-cols-12 gap-5">
+        <figure class="photo-card md:col-span-7 bg-slate-100" data-aos="fade-up">
+          <img src="./images/club-cricket-night.jpg" alt="Aikyam Rise Club cricket ground at night" class="w-full h-[340px] object-cover">
+          <figcaption class="p-5 bg-white">
+            <h3 class="font-black text-xl">Day-Night Cricket Ground</h3>
+            <p class="text-slate-500 mt-1">Aikyam Rise Club sports infrastructure</p>
+          </figcaption>
+        </figure>
 
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="60">
-          <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Chhatrapal Chauhan" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Chhatrapal Chauhan</h3><p class="text-blue-700 font-semibold mt-1">President</p><p class="text-slate-500 text-sm mt-2">B.Tech / MBA (Professional)</p></div>
-        </div>
+        <figure class="photo-card md:col-span-5 bg-slate-100" data-aos="fade-up" data-aos-delay="80">
+          <img src="./images/club-track.jpg" alt="Aikyam Rise Club running track and outdoor space" class="w-full h-[340px] object-cover">
+          <figcaption class="p-5 bg-white">
+            <h3 class="font-black text-xl">Running & Outdoor Sports</h3>
+            <p class="text-slate-500 mt-1">Community-focused sporting spaces</p>
+          </figcaption>
+        </figure>
 
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="120">
-          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Pradeep Singh" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Pradeep Singh</h3><p class="text-blue-700 font-semibold mt-1">Vice-President</p><p class="text-slate-500 text-sm mt-2">B.Tech (Professional)</p></div>
-        </div>
+        <figure class="photo-card md:col-span-4 bg-slate-100" data-aos="fade-up">
+          <img src="./images/club-ground.jpg" alt="Aikyam Rise Club grounds and facilities" class="w-full h-[280px] object-cover">
+          <figcaption class="p-5 bg-white"><h3 class="font-black">Club Grounds</h3></figcaption>
+        </figure>
 
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="180">
-          <img src="https://randomuser.me/api/portraits/men/61.jpg" alt="Amarpal Singh" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Amarpal Singh</h3><p class="text-blue-700 font-semibold mt-1">Secretary</p><p class="text-slate-500 text-sm mt-2">M.A. (Revenue Ministry, Delhi)</p></div>
-        </div>
+        <figure class="photo-card md:col-span-4 bg-slate-100" data-aos="fade-up" data-aos-delay="80">
+          <img src="./images/club-community.jpg" alt="Aikyam Rise Club community group" class="w-full h-[280px] object-cover">
+          <figcaption class="p-5 bg-white"><h3 class="font-black">Community & Youth</h3></figcaption>
+        </figure>
 
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up">
-          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jitender Chauhan" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Jitender Chauhan</h3><p class="text-blue-700 font-semibold mt-1">Treasurer</p><p class="text-slate-500 text-sm mt-2">B.A. (Ministry of Culture, GOI)</p></div>
-        </div>
+        <figure class="photo-card md:col-span-4 bg-slate-100" data-aos="fade-up" data-aos-delay="160">
+          <img src="./images/club-award.jpg" alt="Aikyam Rise Club recognition" class="w-full h-[280px] object-cover object-center">
+          <figcaption class="p-5 bg-white"><h3 class="font-black">Recognition & Reach</h3></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="60">
-          <img src="https://randomuser.me/api/portraits/men/81.jpg" alt="Paramjeet Singh" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Paramjeet Singh</h3><p class="text-blue-700 font-semibold mt-1">Joint-Treasurer</p><p class="text-slate-500 text-sm mt-2">B.A. (Professional)</p></div>
+  <!-- COMMITTEE -->
+  <section id="committee" class="py-24 sm:py-32 bg-[#f7f9fc] text-slate-950 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+        <div class="flex items-center justify-center gap-3">
+          <span class="w-10 h-1 rounded-full bg-[#d71920]"></span>
+          <p class="section-label mb-0">Club Committee</p>
+          <span class="w-10 h-1 rounded-full bg-[#0b3f8f]"></span>
         </div>
+        <h2 class="text-4xl sm:text-5xl font-black mt-4">United by purpose.</h2>
+        <p class="mt-5 text-slate-600 text-lg leading-7">
+          The committee works together to nurture talent, discipline and collective growth.
+        </p>
+      </div>
 
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="120">
-          <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Ravi Chauhan" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Ravi Chauhan</h3><p class="text-blue-700 font-semibold mt-1">Joint-Secretary</p><p class="text-slate-500 text-sm mt-2">B.Tech (IT Professional)</p></div>
-        </div>
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
 
-        <div class="card rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up" data-aos-delay="180">
-          <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Kamalkant Singh" class="w-full h-56 object-cover object-top">
-          <div class="p-6"><h3 class="font-black text-xl">Kamalkant Singh</h3><p class="text-blue-700 font-semibold mt-1">Coordinator</p><p class="text-slate-500 text-sm mt-2">B.Tech / M.Tech (Professional)</p></div>
-        </div>
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/ratanpal-chauhan.jpg" alt="Ratanpal Chauhan" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Ratanpal Chauhan</h3><p class="text-[#0b3f8f] font-semibold mt-1">Village Sarpanch</p><p class="text-slate-500 text-sm mt-2">B.Tech (Professional)</p></div>
+        </article>
+
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/chhatrapal-chauhan.jpg" alt="Chhatrapal Chauhan" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Chhatrapal Chauhan</h3><p class="text-[#0b3f8f] font-semibold mt-1">President</p><p class="text-slate-500 text-sm mt-2">B.Tech / MBA (Professional)</p></div>
+        </article>
+
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/pradeep-singh.jpg" alt="Pradeep Singh" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Pradeep Singh</h3><p class="text-[#0b3f8f] font-semibold mt-1">Vice-President</p><p class="text-slate-500 text-sm mt-2">B.Tech (Professional)</p></div>
+        </article>
+
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/amarpal-singh.jpg" alt="Amarpal Singh" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Amarpal Singh</h3><p class="text-[#0b3f8f] font-semibold mt-1">Secretary</p><p class="text-slate-500 text-sm mt-2">M.A. (Revenue Ministry, Delhi)</p></div>
+        </article>
+
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/jitender-chauhan.jpg" alt="Jitender Chauhan" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Jitender Chauhan</h3><p class="text-[#0b3f8f] font-semibold mt-1">Treasurer</p><p class="text-slate-500 text-sm mt-2">B.A. (Ministry of Culture, GOI)</p></div>
+        </article>
+
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/paramjeet-singh.jpg" alt="Paramjeet Singh" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Paramjeet Singh</h3><p class="text-[#0b3f8f] font-semibold mt-1">Joint-Treasurer</p><p class="text-slate-500 text-sm mt-2">B.A. (Professional)</p></div>
+        </article>
+
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/ravi-chauhan.jpg" alt="Ravi Chauhan" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Ravi Chauhan</h3><p class="text-[#0b3f8f] font-semibold mt-1">Joint-Secretary</p><p class="text-slate-500 text-sm mt-2">B.Tech (IT Professional)</p></div>
+        </article>
+
+        <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
+          <img src="./images/kamalkant-singh.jpg" alt="Kamalkant Singh" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Kamalkant Singh</h3><p class="text-[#0b3f8f] font-semibold mt-1">Coordinator</p><p class="text-slate-500 text-sm mt-2">B.Tech / M.Tech (Professional)</p></div>
+        </article>
       </div>
     </div>
   </section>
@@ -455,6 +576,12 @@
         Join the mission to empower youth through sports, unity and community development.
       </p>
 
+      <div class="mt-7">
+        <a href="mailto:connect@aikyamriseclub.com" class="inline-flex items-center gap-2 text-white font-semibold hover:text-[#f4b942] transition">
+          ✉️ connect@aikyamriseclub.com
+        </a>
+      </div>
+
       <div class="mt-10 flex flex-wrap justify-center gap-4">
         <a href="tel:+919466414614" class="px-7 py-3.5 rounded-full bg-white text-slate-950 font-bold hover:bg-slate-100 transition">📞 9466-414-614</a>
         <a href="https://www.aikyamrise.com" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-full border border-white/40 font-bold hover:bg-white/10 transition">🌐 aikyamrise.com</a>
@@ -463,9 +590,15 @@
   </section>
 
   <footer class="bg-[#00285d] border-t border-blue-900/20">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-5 text-sm text-slate-300">
       <p>© <span id="year"></span> Aikyam Rise Club. All rights reserved.</p>
-      <p class="text-amber-400 font-semibold">Empowering Youth Through Sports & Unity</p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="/tnc" class="hover:text-[#f4b942] transition">Terms &amp; Conditions</a>
+        <a href="/privacy-policy" class="hover:text-[#f4b942] transition">Privacy Policy</a>
+        <a href="https://member.aikyamriseclub.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#f4b942] transition">Member Login</a>
+        <span class="text-slate-500 hidden md:inline">|</span>
+        <span class="text-[#f4b942] font-semibold">Empowering Youth Through Sports &amp; Unity</span>
+      </div>
     </div>
   </footer>
 
