@@ -194,7 +194,10 @@
       #home .mt-9{flex-direction:column;align-items:stretch}
       #home .mt-9 a{width:100%;text-align:center}
     }
-  </style>
+  
+    .light-section-text{color:#475569}
+    .light-section-text strong{color:#17233c}
+    </style>
 </head>
 
 <body>
@@ -202,13 +205,13 @@
   <header class="fixed top-0 left-0 right-0 z-50" style="background-color:#071b49 !important; box-shadow:0 4px 22px rgba(0,0,0,.18);">>
     <nav class="max-w-7xl mx-auto px-5 sm:px-6">
       <div class="h-20 flex items-center justify-between">
-        <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center overflow-hidden logo-shadow">
+        <a href="#home" class="flex items-center gap-3 group min-w-0">
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center overflow-hidden logo-shadow flex-shrink-0">
             <img src="./images/aikyam-logo.png" alt="Aikyam Rise Club Logo" class="w-12 h-12 object-contain">
           </div>
-          <div>
-            <div class="font-black text-lg leading-none text-white tracking-tight">AIKYAM</div>
-            <div class="text-[10px] text-[#f4b942] font-extrabold tracking-[.18em] mt-1">RISE CLUB</div>
+          <div class="font-black text-lg sm:text-xl leading-none tracking-tight whitespace-nowrap">
+            <span class="text-white">AIKYAM</span>
+            <span class="text-[#f4b942]"> RISE CLUB</span>
           </div>
         </a>
 
@@ -226,11 +229,12 @@
           </a>
         </div>
 
-        <button id="menu-btn" aria-label="Open menu" class="md:hidden w-12 h-12 rounded-xl border-2 border-white/80 bg-[#0b3f8f] flex flex-col items-center justify-center gap-1.5 shadow-lg">
-          <span class="w-7 h-1 bg-white rounded-full"></span>
-          <span class="w-7 h-1 bg-white rounded-full"></span>
-          <span class="w-7 h-1 bg-white rounded-full"></span>
-        </button>
+        <button id="menu-btn" aria-label="Open menu"
+        class="md:hidden flex flex-col items-center justify-center gap-1.5 p-2">
+        <span class="w-7 h-1 bg-white rounded-full"></span>
+        <span class="w-7 h-1 bg-white rounded-full"></span>
+        <span class="w-7 h-1 bg-white rounded-full"></span>
+      </button>
       </div>
 
       <div id="mobile-menu" class="mobile-menu md:hidden border-t border-white/10" style="background-color:#071b49 !important;">
@@ -281,10 +285,15 @@
 
   <!-- STATS -->
   <section class="border-y border-white/10 bg-[#071b49] text-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="stat pl-4" data-aos="fade-up"><div class="text-3xl font-black">270+</div><div class="text-slate-400 text-sm mt-1">Members</div></div>
-      <div class="stat pl-4" data-aos="fade-up" data-aos-delay="80"><div class="text-3xl font-black">55+</div><div class="text-slate-400 text-sm mt-1">Villages & Cities</div></div>
-      <div class="stat pl-4" data-aos="fade-up" data-aos-delay="160"><div class="text-3xl font-black">22</div><div class="text-slate-400 text-sm mt-1">Acres of Existing Land</div></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 grid grid-cols-2 gap-6 max-w-2xl mx-auto">
+      <div class="stat pl-4" data-aos="fade-up">
+        <div class="text-3xl font-black">270+</div>
+        <div class="text-slate-300 text-sm mt-1">Members</div>
+      </div>
+      <div class="stat pl-4" data-aos="fade-up" data-aos-delay="80">
+        <div class="text-3xl font-black">55+</div>
+        <div class="text-slate-300 text-sm mt-1">Villages &amp; Cities</div>
+      </div>
     </div>
   </section>
 
@@ -294,20 +303,20 @@
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div data-aos="fade-right">
           <p class="section-label">About the Club</p>
-          <h2 class="text-4xl sm:text-5xl font-black mt-3">Unity that helps young people <span class="text-amber-400">rise.</span></h2>
-          <p class="mt-7 text-slate-300 leading-8">
+          <h2 class="text-4xl sm:text-5xl font-black mt-3 text-[#071b49]">Unity that helps young people <span class="text-amber-400">rise.</span></h2>
+          <p class="mt-7 text-slate-600 leading-8">
             “Aikyam” is derived from Sanskrit, meaning oneness or unity. The club embodies
             togetherness through sports, culture and community.
           </p>
-          <p class="mt-5 text-slate-300 leading-8">
+          <p class="mt-5 text-slate-600 leading-8">
             “Rise” represents upliftment — a call to move beyond stagnation and mediocrity,
             helping young people become aware of their potential and purpose.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <span class="glass px-4 py-2 rounded-full text-sm">Sports</span>
-            <span class="glass px-4 py-2 rounded-full text-sm">Youth Development</span>
-            <span class="glass px-4 py-2 rounded-full text-sm">Rural Development</span>
-            <span class="glass px-4 py-2 rounded-full text-sm">Environment</span>
+            <span class="glass px-4 py-2 rounded-full text-sm text-[#17233c] font-semibold">Sports</span>
+            <span class="glass px-4 py-2 rounded-full text-sm text-[#17233c] font-semibold">Youth Development</span>
+            <span class="glass px-4 py-2 rounded-full text-sm text-[#17233c] font-semibold">Rural Development</span>
+            <span class="glass px-4 py-2 rounded-full text-sm text-[#17233c] font-semibold">Environment</span>
           </div>
         </div>
 
@@ -406,18 +415,18 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
       <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
         <p class="section-label">Our Work</p>
-        <h2 class="text-4xl sm:text-5xl font-black mt-3">From ideas to community impact.</h2>
-        <p class="mt-5 text-slate-400 leading-7">The club's documented initiatives include sports, youth engagement and development of community spaces.</p>
+        <h2 class="text-4xl sm:text-5xl font-black mt-3 text-[#071b49]">From ideas to community impact.</h2>
+        <p class="mt-5 text-slate-600 leading-7">The club's documented initiatives include sports, youth engagement and development of community spaces.</p>
       </div>
 
       <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
           <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=85" alt="Cricket ground">
-          <div class="p-7"><p class="text-amber-400 font-bold text-sm">INFRASTRUCTURE</p><h3 class="text-2xl font-black mt-2">Day-Night Cricket Ground</h3><p class="mt-3 text-slate-400 leading-7">The club highlights Haryana's first day-night cricket ground on Panchayati land.</p></div>
+          <div class="p-7"><p class="text-amber-400 font-bold text-sm">INFRASTRUCTURE</p><h3 class="text-2xl font-black mt-2">Day-Night Cricket Ground</h3><p class="mt-3 text-slate-600 leading-7">The club highlights Haryana's first day-night cricket ground on Panchayati land.</p></div>
         </article>
         <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
           <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1000&q=85" alt="Healthy youth">
-          <div class="p-7"><p class="text-amber-400 font-bold text-sm">YOUTH</p><h3 class="text-2xl font-black mt-2"></h3><p class="mt-3 text-slate-400 leading-7">A free sports membership initiative for players under 18.</p></div>
+          <div class="p-7"><p class="text-amber-400 font-bold text-sm">YOUTH</p><h3 class="text-2xl font-black mt-2"></h3><p class="mt-3 text-slate-600 leading-7">A free sports membership initiative for players under 18.</p></div>
         </article>
       </div>
     </div>
@@ -429,8 +438,8 @@
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div data-aos="fade-right">
           <p class="section-label">Future Vision</p>
-          <h2 class="text-4xl sm:text-5xl font-black mt-3">A place where the community can <span class="text-amber-400">play, learn & grow.</span></h2>
-          <p class="mt-6 text-slate-400 leading-8">
+          <h2 class="text-4xl sm:text-5xl font-black mt-3 text-[#071b49]">A place where the community can <span class="text-amber-400">play, learn & grow.</span></h2>
+          <p class="mt-6 text-slate-600 leading-8">
             The proposed campus vision in the club material covers approximately 16 acres
             and brings sports, recreation, nature and community facilities together.
           </p>
@@ -450,9 +459,9 @@
 
         <div class="relative" data-aos="fade-left">
           <img class="rounded-[2rem] w-full h-[620px] object-cover" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85" alt="Sports campus">
-          <div class="absolute bottom-5 left-5 right-5 glass rounded-2xl p-5">
+            <div class="absolute bottom-5 left-5 right-5 glass rounded-2xl p-5">
             <div class="text-amber-400 font-black text-3xl">16 Acres</div>
-            <div class="text-sm text-slate-300 mt-1">Proposed development vision</div>
+            <div class="text-sm text-slate-500 mt-1">Proposed development vision</div>
           </div>
         </div>
       </div>
@@ -558,7 +567,7 @@
         </article>
 
         <article class="card bg-white rounded-3xl overflow-hidden border border-slate-200">
-          <img src="./images/ravi-chauhan.jpeg" alt="Ravi Chauhan" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
+          <img src="./images/ravi-chauhan.jpg" alt="Ravi Chauhan" class="w-full h-52 sm:h-60 object-cover object-top bg-slate-100">
           <div class="p-5"><h3 class="font-black text-lg sm:text-xl">Ravi Chauhan</h3><p class="text-[#0b3f8f] font-semibold mt-1">Joint-Secretary</p><p class="text-slate-500 text-sm mt-2">B.Tech (IT Professional)</p></div>
         </article>
 
@@ -581,15 +590,15 @@
       </p>
 
       <div class="mt-7">
-        <a href="mailto:info@aikyamriseclub" class="inline-flex items-center gap-2 text-white font-semibold hover:text-[#f4b942] transition">
-          ✉️ info@aikyamriseclub
+        <a href="mailto:info@aikyamriseclub.com" class="inline-flex items-center gap-2 text-white font-semibold hover:text-[#f4b942] transition">
+          ✉️ info@aikyamriseclub.com
         </a>
       </div>
 
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="https://wa.me/9199350279755" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/919350279755" target="_blank" rel="noopener noreferrer"
            class="px-7 py-3.5 rounded-full bg-[#25D366] text-white font-bold hover:bg-[#1ebe5d] transition shadow-lg shadow-black/10">
-          💬 WhatsApp: 9935-027-9755
+          💬 WhatsApp: +91 9350279755
         </a>
 
         <a href="#mission"
@@ -607,14 +616,14 @@
     </div>
   </section>
 
-  <footer class="bg-[#00285d] border-t border-blue-900/20">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-5 text-sm text-slate-300">
-      <p>© <span id="year"></span> Aikyam Rise Club. All rights reserved.</p>
+  <footer class="bg-[#00285d] border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-5 text-sm">
+      <p class="text-white">© <span id="year"></span> Aikyam Rise Club. All rights reserved.</p>
       <div class="flex flex-wrap items-center justify-center gap-5">
-        <a href="/tnc" class="hover:text-[#f4b942] transition">Terms &amp; Conditions</a>
-        <a href="/privacy-policy" class="hover:text-[#f4b942] transition">Privacy Policy</a>
-        <a href="https://app.aikyamriseclub.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#f4b942] transition">Member Login</a>
-        <span class="text-slate-500 hidden md:inline">|</span>
+        <a href="/tnc" class="text-white hover:text-[#f4b942] transition font-medium">Terms &amp; Conditions</a>
+        <a href="/privacy-policy" class="text-white hover:text-[#f4b942] transition font-medium">Privacy Policy</a>
+        <a href="https://app.aikyamriseclub.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#f4b942] transition font-medium">Member Login</a>
+        <span class="text-white/40 hidden md:inline">|</span>
         <span class="text-[#f4b942] font-semibold">Empowering Youth Through Sports &amp; Unity</span>
       </div>
     </div>
