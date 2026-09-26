@@ -49,7 +49,7 @@
     }
 
     .brand-gradient{
-      background:linear-gradient(90deg,#fff 0%,#f4b942 52%,#ef8d24 100%);
+      background:linear-gradient(90deg,#f4b942 0%,#ffd66b 60%,#ef8d24 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent
     }
@@ -185,12 +185,21 @@
     @media (min-width:768px){
       .mobile-menu{display:none !important}
     }
+
+    @media (max-width: 767px){
+      header nav{width:100%}
+      header .h-20{height:76px}
+      header img{max-width:100%}
+      #home .max-w-7xl{padding-left:1.25rem;padding-right:1.25rem}
+      #home .mt-9{flex-direction:column;align-items:stretch}
+      #home .mt-9 a{width:100%;text-align:center}
+    }
   </style>
 </head>
 
 <body>
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#071b49]/98 backdrop-blur-xl border-b border-white/10">
+  <header class="fixed top-0 left-0 right-0 z-50" style="background-color:#071b49 !important; box-shadow:0 4px 22px rgba(0,0,0,.18);">>
     <nav class="max-w-7xl mx-auto px-5 sm:px-6">
       <div class="h-20 flex items-center justify-between">
         <a href="#home" class="flex items-center gap-3 group">
@@ -212,19 +221,19 @@
           <a href="#committee" class="hover:text-[#f4b942] transition">Committee</a>
           <a href="#contact" class="hover:text-[#f4b942] transition">Contact</a>
           <a href="https://app.aikyamriseclub.com" target="_blank" rel="noopener noreferrer"
-             class="ml-1 px-4 py-2 rounded-full bg-[#d71920] text-white font-bold hover:bg-[#a90f16] transition">
+             class="ml-1 px-4 py-2 rounded-full bg-[#d71920] text-white font-bold hover:bg-[#a90f16] transition shadow-md shadow-black/20">
             Member Login
           </a>
         </div>
 
-        <button id="menu-btn" aria-label="Open menu" class="md:hidden w-12 h-12 rounded-xl border-2 border-white/50 bg-white/10 flex flex-col items-center justify-center gap-1.5 shadow-lg">
+        <button id="menu-btn" aria-label="Open menu" class="md:hidden w-12 h-12 rounded-xl border-2 border-white/80 bg-[#0b3f8f] flex flex-col items-center justify-center gap-1.5 shadow-lg">
           <span class="w-7 h-1 bg-white rounded-full"></span>
           <span class="w-7 h-1 bg-white rounded-full"></span>
           <span class="w-7 h-1 bg-white rounded-full"></span>
         </button>
       </div>
 
-      <div id="mobile-menu" class="mobile-menu md:hidden border-t border-white/10 bg-[#071b49]">
+      <div id="mobile-menu" class="mobile-menu md:hidden border-t border-white/10" style="background-color:#071b49 !important;">
         <div class="px-5 py-5 flex flex-col gap-5 text-sm font-semibold">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -249,7 +258,7 @@
       <div class="max-w-3xl" data-aos="fade-up">
         <p class="section-label mb-5">Aikyam • Unity • Upliftment</p>
         <div class="hero-color-rule w-24 h-1.5 rounded-full bg-gradient-to-r from-[#d10f16] via-[#f0a040] to-[#004090] mb-7"></div>
-        <h1 class="text-5xl sm:text-6xl lg:text-8xl font-black leading-[.95]">
+        <h1 class="text-5xl sm:text-6xl lg:text-8xl font-black leading-[.95] text-white drop-shadow-[0_4px_14px_rgba(0,0,0,.35)]">
           Utho.<br>
           Jago.<br>
           <span class="brand-gradient">Chalo.</span>
@@ -260,7 +269,7 @@
         </p>
         <div class="mt-9 flex flex-wrap gap-4">
           <a href="#about" class="px-7 py-3.5 rounded-full bg-[#f4b942] text-[#071b49] font-bold hover:bg-[#ffd36a] transition shadow-lg shadow-black/10">Discover Aikyam</a>
-          <a href="#contact" class="px-7 py-3.5 rounded-full border border-white/45 font-bold hover:bg-white/10 transition">Join Our Mission</a>
+          <a href="#contact" class="px-7 py-3.5 rounded-full border-2 border-white/70 text-white font-bold hover:bg-white/10 transition">Join Our Mission</a>
         <a id="hero-member-login" href="https://app.aikyamriseclub.com" target="_blank" rel="noopener noreferrer"
            class="px-7 py-3.5 rounded-full border-2 border-white/60 text-white font-bold hover:bg-white/10 transition">
           Member Login
@@ -276,7 +285,6 @@
       <div class="stat pl-4" data-aos="fade-up"><div class="text-3xl font-black">270+</div><div class="text-slate-400 text-sm mt-1">Members</div></div>
       <div class="stat pl-4" data-aos="fade-up" data-aos-delay="80"><div class="text-3xl font-black">55+</div><div class="text-slate-400 text-sm mt-1">Villages & Cities</div></div>
       <div class="stat pl-4" data-aos="fade-up" data-aos-delay="160"><div class="text-3xl font-black">22</div><div class="text-slate-400 text-sm mt-1">Acres of Existing Land</div></div>
-      <div class="stat pl-4" data-aos="fade-up" data-aos-delay="240"><div class="text-3xl font-black">U-18</div><div class="text-slate-400 text-sm mt-1">Free Sports Membership</div></div>
     </div>
   </section>
 
@@ -402,18 +410,14 @@
         <p class="mt-5 text-slate-400 leading-7">The club's documented initiatives include sports, youth engagement and development of community spaces.</p>
       </div>
 
-      <div class="mt-14 grid md:grid-cols-3 gap-6">
-        <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up">
-          <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1000&q=85" alt="Half marathon">
-          <div class="p-7"><p class="text-amber-400 font-bold text-sm">SPORTS</p><h3 class="text-2xl font-black mt-2">District-Level Half Marathon</h3><p class="mt-3 text-slate-400 leading-7">Organising a district-level half-marathon as part of the club's sporting activities.</p></div>
-        </article>
+      <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
           <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=85" alt="Cricket ground">
           <div class="p-7"><p class="text-amber-400 font-bold text-sm">INFRASTRUCTURE</p><h3 class="text-2xl font-black mt-2">Day-Night Cricket Ground</h3><p class="mt-3 text-slate-400 leading-7">The club highlights Haryana's first day-night cricket ground on Panchayati land.</p></div>
         </article>
         <article class="card glass rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
           <img class="w-full h-56 object-cover" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1000&q=85" alt="Healthy youth">
-          <div class="p-7"><p class="text-amber-400 font-bold text-sm">YOUTH</p><h3 class="text-2xl font-black mt-2">Free U-18 Sports Membership</h3><p class="mt-3 text-slate-400 leading-7">A free sports membership initiative for players under 18.</p></div>
+          <div class="p-7"><p class="text-amber-400 font-bold text-sm">YOUTH</p><h3 class="text-2xl font-black mt-2"></h3><p class="mt-3 text-slate-400 leading-7">A free sports membership initiative for players under 18.</p></div>
         </article>
       </div>
     </div>
@@ -577,14 +581,28 @@
       </p>
 
       <div class="mt-7">
-        <a href="mailto:connect@aikyamriseclub.com" class="inline-flex items-center gap-2 text-white font-semibold hover:text-[#f4b942] transition">
-          ✉️ connect@aikyamriseclub.com
+        <a href="mailto:info@aikyamriseclub" class="inline-flex items-center gap-2 text-white font-semibold hover:text-[#f4b942] transition">
+          ✉️ info@aikyamriseclub
         </a>
       </div>
 
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="tel:+919466414614" class="px-7 py-3.5 rounded-full bg-white text-slate-950 font-bold hover:bg-slate-100 transition">📞 9466-414-614</a>
-        <a href="https://www.aikyamrise.com" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-full border border-white/40 font-bold hover:bg-white/10 transition">🌐 aikyamrise.com</a>
+        <a href="https://wa.me/9199350279755" target="_blank" rel="noopener noreferrer"
+           class="px-7 py-3.5 rounded-full bg-[#25D366] text-white font-bold hover:bg-[#1ebe5d] transition shadow-lg shadow-black/10">
+          💬 WhatsApp: 9935-027-9755
+        </a>
+
+        <a href="#mission"
+           class="px-7 py-3.5 rounded-full border-2 border-white/45 bg-white/5 text-white font-bold hover:bg-white/15 transition">
+          🤝 Join Our Mission
+        </a>
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold text-white/80">
+        <span class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Sports</span>
+        <span class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Youth</span>
+        <span class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Unity</span>
+        <span class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Community</span>
       </div>
     </div>
   </section>
